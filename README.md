@@ -4,7 +4,7 @@ This simple Matlab code demonstrates a proposed algorithm for producing simulati
 
 The algorithm demonstrated here is described in the following document
 
-> Jack W. Baker, Ed Almeter, Dustin Cook, Abbie Liel, and Curt Haselton, (2023) "A model for partially dependent component damage fragilities in seismic risk analysis," (in review).
+> Jack W. Baker, Ed Almeter, Dustin Cook, Abbie Liel, and Curt Haselton, (2023) "A model for partially dependent component damage fragilities in seismic risk analysis," Earthquake Spectra. (in press).
 
 The results from this calculation are the "Simple Example" presented
 in the above manuscript.
