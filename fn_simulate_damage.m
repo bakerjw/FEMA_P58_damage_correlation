@@ -79,23 +79,24 @@ for k = 1:nCases % for each weight case
     subplot(nCases, 2, k*2-1)
     histogram(nDamagedTotal);
     axis([-0.5 20.5 0 nSims])
-    xlabel('Number of damaged components (N)', 'Interpreter','latex')
+    xlabel('Num. damaged components (N)')
     ylabel('Number of simulations')
     %     title(['fractions = [' num2str(c(1),2) ',' num2str(c(2),2) ',' num2str(c(3),2) '], \mu_n=' num2str(mean(nDamagedTotal),2) ', \sigma_n=' num2str(std(nDamagedTotal),2)])
     axis square
-    text(0.85,0.9,charlbl{k*2-1},'Units','normalized','FontSize',labelSize)
+    text(-0.35,-0.25,charlbl{k*2-1},'Units','normalized','FontSize',labelSize)
+%     text(0.85,0.9,charlbl{k*2-1},'Units','normalized','FontSize',labelSize)
     text(0.15,0.8,['$P(N \geq 1) = ' num2str(results.pDamage(k),2) '$'],'Units','normalized','FontSize',labelSize, 'Interpreter','latex')
-    text(0.15,0.7,['$P(N \geq 10) = ' num2str(results.p10(k),2) '$'],'Units','normalized','FontSize',labelSize, 'Interpreter','latex')
-    text(0.15,0.6,['$E[N] = ' num2str(results.nDamaged(k),2) '$'],'Units','normalized','FontSize',labelSize, 'Interpreter','latex')
+    text(0.15,0.68,['$P(N \geq 10) = ' num2str(results.p10(k),2) '$'],'Units','normalized','FontSize',labelSize, 'Interpreter','latex')
+    text(0.15,0.56,['$\overline{N} = ' num2str(results.nDamaged(k),2) '$'],'Units','normalized','FontSize',labelSize, 'Interpreter','latex')
 
 
     % num damaged components scatter plot
     nP = 1000; % how many points to show
 
-    jitters = (rand(nSims,2)-.5)*0.15; % random offsets for visualization
+    jitters = (rand(nSims,2)-.5)*0.25; % random offsets for visualization
 
     subplot(nCases, 2, k*2)
-    plot(nDamaged(1:nP,1)+jitters(1:nP,1), nDamaged(1:nP,2)+jitters(1:nP,2), '.')
+    plot(nDamaged(1:nP,1)+jitters(1:nP,1), nDamaged(1:nP,2)+jitters(1:nP,2), '.', 'MarkerSize', 4)
     xticks(0:5)
     yticks(0:5)
     xlabel('Num. damaged components (type 1)')
@@ -103,7 +104,7 @@ for k = 1:nCases % for each weight case
     axis square
     axis([[0 length(component)+1 0 length(component)+1]-0.5])
     %     title(['\rho = ' num2str(results.damageRho,2)])
-    text(0.85,0.9,charlbl{k*2},'Units','normalized','FontSize',labelSize)
+    text(-0.25,-0.25,charlbl{k*2},'Units','normalized','FontSize',labelSize)
 
 end
 
